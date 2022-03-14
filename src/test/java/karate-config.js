@@ -4,10 +4,16 @@ function fn() {
   if (!env) {
     env = 'dev';
   }
+
+  // This is where you can define global variable that can be accessible everywhere
+  //
   var config = {
     env: env,
-    myVarName: 'someValue'
+    spartan_url: 'http://54.236.150.168:8000/api'
   }
+
+
+
   if (env == 'dev') {
     // customize
     // e.g. config.foo = 'bar';
