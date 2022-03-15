@@ -29,6 +29,7 @@ Feature: Spartan Get Data using get requests
 
       ## Bring the type called SpartanUtility and use it's static method
       * def SpartanUtility = Java.type("practice.utility.SpartanUtility")
+      ## Call the method and store the result into variable
       * def randomMapBody = SpartanUtility.getRandomSpartanMapBody()
       * print randomMapBody
 
