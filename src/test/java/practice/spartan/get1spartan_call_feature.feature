@@ -5,8 +5,8 @@ Feature: Spartan Get 1 Data
 
   Background:
     Given url spartan_url
-    # create new data before each update scenario
-
+    # create new data before each scenario
+    # This is calling another feature and get it's returned variables
     * def result = call read('generate_spartan.feature')
     * def newID = result.newID
     * print newID
