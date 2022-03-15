@@ -1,4 +1,4 @@
-Feature: Spartan Get Data using get requests
+Feature: Spartan Add Data
   As a user ,
   I should be able to Add Data using Spartan API
   The IP you can use is this http://54.236.150.168:8000/api
@@ -49,6 +49,23 @@ Feature: Spartan Get Data using get requests
     Given path "/spartans"
     And header Content-Type = "application/json"
     And request payload
+    When method POST
+    Then status 201
+    * print "Newly generated Spartan ID", response.data.id
+
+
+
+  Scenario: Should be able to add data using POST /spartans with Random Body
+
+    ## Bring the type called SpartanUtility and use it's static method
+    * def SpartanUtility = Java.type("practice.utility.SpartanUtility")
+      ## Call the method and store the result into variable
+    * def randomMapBody = SpartanUtility.getRandomSpartanMapBody()
+    * print randomMapBody
+
+    Given path "/spartans"
+    And header Content-Type = "application/json"
+    And request randomMapBody
     When method POST
     Then status 201
     * print "Newly generated Spartan ID", response.data.id
