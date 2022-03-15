@@ -72,6 +72,11 @@ Feature: Spartan Get Data using get requests
     * match response.content[*].name contains ["Sinclair","Wash"]
     # You can do relative path using double dot .. to shortern your jsonpath if it's deeply nested
     * match response..name contains ["Sinclair","Wash"]
+    # Check each gender value in this result is male
+    * match each response.content[*].gender == "Male"
+
+
+
 
 
 
